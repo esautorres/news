@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lobster|Lora|Satisfy&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand text-primary city"> <strong><%= @location %> </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a href="/" class="btn btn-outline-primary">Change Location</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-5">
+<div class="card">
+<div class="card-header text-white bg-dark mb-3">
+    <h1><strong>Coordinates</strong></h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><strong>Latitude:</strong> <%= @geocode_lat %> </h5>
+    <h5 class="card-title"><strong>Longitude:</strong> <%= @geocode_long %> </h5>
+  </div>
+</div>
+</div>
+
+<div class="container mt-5">
+    <h5 class="card-header text-white bg-dark mb-3"> <strong>Current Weather:</strong>
+    <%= "It is currently #{@current_temperature} degrees and #{@current_summary}." %></h5>
+</div>
+
+
+             <div class="container mt-5">
+<div class="card">
+  <div class="card-header text-white bg-dark mb-3">
+    <h1><strong>Five Day Forecast</strong></h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><strong>Day 1:</strong> <%=
+"A high temperature of #{@forecast_daily[0]["temperatureHigh"]} and #{@forecast_daily[0]["summary"].downcase}"
+%></h5> 
+<h5><strong>Day 2:</strong><%="A high temperature of #{@forecast_daily[1]["temperatureHigh"]} and #{@forecast_daily[1]["summary"].downcase}"%>
+</h5>
+<h5><strong>Day 3:</strong><%="A high temperature of #{@forecast_daily[2]["temperatureHigh"]} and #{@forecast_daily[2]["summary"].downcase}"%>
+</h5>
+<h5><strong>Day 4:</strong><%="A high temperature of #{@forecast_daily[3]["temperatureHigh"]} and #{@forecast_daily[3]["summary"].downcase}"%>
+</h5>
+<h5><strong>Day 5:</strong><%="A high temperature of #{@forecast_daily[4]["temperatureHigh"]} and #{@forecast_daily[4]["summary"].downcase}"%>
+</h5>
+
+ 
+</div>
+</div>
+
+    </div>
+
+
+             <div class="container mt-5">
+    <div>
+        <h1 class="city card-header text-white bg-dark mb-3"><strong>Top 5 Stories</strong></h1>
+
+    <div class=row>
+    
+    <div class="col-md-12">
+      <table class="table table_border">
+        <tr>
+          <td><b>1: <%=@news_title_1%></b></td>
+          <td><i><%=@news_description_1%></i></td>
+          <td><a class="btn btn-outline-primary btn_alignment" href=<%=@news_url_1%>>View Full Article</a></td>
+        </tr>
+        <tr>
+          <td><b>2: <%=@news_title_2%></b></td>
+          <td><i><%=@news_description_2%></i></td>
+          <td><a class="btn btn-outline-primary btn_alignment" href=<%=@news_url_2%>>View Full Article</a></td>
+        </tr>
+        <tr>
+          <td><b>3: <%=@news_title_3%></b></td>
+          <td><i><%=@news_description_3%></i></td>
+          <td><a class="btn btn-outline-primary btn_alignment" href=<%=@news_url_3%>>View Full Article</a></td>
+        </tr>
+        <tr>
+          <td><b>4: <%=@news_title_4%></b></td>
+          <td><i><%=@news_description_4%></i></td>
+          <td><a class="btn btn-outline-primary btn_alignment" href=<%=@news_url_4%>>View Full Article</a></td>
+        </tr>
+        <tr>
+          <td><b>5: <%=@news_title_5%></b></td>
+          <td><i><%=@news_description_5%></i></td>
+          <td><a class="btn btn-outline-primary btn_alignment" href=<%=@news_url_5%>>View Full Article</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  </div>
+
+    </body>
+</html>
