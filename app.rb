@@ -53,6 +53,10 @@ get "/news" do
   @news_description_5 = news["articles"][4]["description"]
   @news_url_5 = news["articles"][4]["url"]
 
+  @news_title_6 = news["articles"][5]["title"]
+  @news_description_6 = news["articles"][5]["description"]
+  @news_url_6 = news["articles"][5]["url"]
+
   view "news"
 
 end
